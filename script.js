@@ -9,14 +9,14 @@ function newGame(){
 }
 
 function createBoard(){
-    const BOARD = 960;
-    const pixelsPerSide = getPixelsPerSide();
-    createGrid(BOARD/pixelsPerSide);
+    const BOARD_PIXELS = 960;
+    const pixelsPerSide = getPixelsPerSide(BOARD_PIXELS);
+    createGrid(BOARD_PIXELS/pixelsPerSide);
     setSquareSize(pixelsPerSide)    
 }
 
-function getPixelsPerSide(){
-    const BOARD = 960;
+function getPixelsPerSide(x){
+    const BOARD = x;
     let userInput = prompt('How many squares on each side?')
     userInput = Math.floor(userInput)
     return BOARD/userInput
