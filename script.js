@@ -22,9 +22,21 @@ function createBoard(){
 
 function getPixelsPerSide(x){
     const BOARD = x;
-    let userInput = prompt('How many squares on each side?')
-    userInput = Math.floor(userInput)
-    return BOARD/userInput
+    let valid = false;
+    let pixelsPerSide = 0;
+    while (valid === false){
+        let userInput = parseInt(prompt('How many squares on each side?'));
+        if (
+            userInput > 0 &&
+            userInput < 100 &&
+            isNaN(userInput) === false &&
+            Number.isInteger(userInput)
+        ){
+            valid = true;
+            pixelsPerSide = BOARD / userInput;
+        }
+    }    
+    return pixelsPerSide;
 }
 
 function createGrid(x){
