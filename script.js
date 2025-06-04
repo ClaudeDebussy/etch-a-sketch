@@ -71,7 +71,6 @@ function colorRandomizer(){
         rHex = r.toString(16);
         gHex = g.toString(16);
         bHex = b.toString(16);
-        console.log("#" + rHex + gHex + bHex)
         return "#" + rHex + gHex + bHex;
     }
 
@@ -80,6 +79,5 @@ function colorRandomizer(){
     let b = randomInteger(256);
 
     let hexString = convertToHex(r,g,b);
-    console.log(hexString);
     return hexString;
 }
