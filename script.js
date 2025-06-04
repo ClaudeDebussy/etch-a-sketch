@@ -64,21 +64,20 @@ function enableEtchASketch(){
 }
 
 function colorRandomizer(){
-    function randomIntFromInterval(min, max) {
-        let randomNumberInRange = Math.floor(Math.random() * (max - min + 1) + min);
-        return randomNumberInRange;
+    function randomInteger(max) {
+        return Math.floor(Math.random() * (max + 1));
     }
     function convertToHex(r,g,b){
         rHex = r.toString(16);
-        gHex = r.toString(16);
-        bHex = r.toString(16);
+        gHex = g.toString(16);
+        bHex = b.toString(16);
         console.log("#" + rHex + gHex + bHex)
         return "#" + rHex + gHex + bHex;
     }
 
-    let r = randomIntFromInterval(1,256);
-    let g = randomIntFromInterval(1,256);
-    let b = randomIntFromInterval(1,256);
+    let r = randomInteger(256);
+    let g = randomInteger(256);
+    let b = randomInteger(256);
 
     let hexString = convertToHex(r,g,b);
     console.log(hexString);
